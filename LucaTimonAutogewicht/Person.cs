@@ -7,14 +7,19 @@ namespace LucaTimonAutogewicht
 {
     public class Person
     {
-        private int gewicht;
+        private double gewicht;
 
         public Person()
         {
             gewicht = 100;
         }
+        public Person (double pGewicht) 
+        {
+            gewicht =pGewicht;
+        }
 
-        public int GetGewicht()
+
+        public double GetGewicht()
         {
             return gewicht;
         }
