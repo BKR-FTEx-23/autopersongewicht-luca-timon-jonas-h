@@ -10,11 +10,9 @@ namespace LucaTimonAutogewicht
         private double gesammt_gewicht;
         private int anzahl_personen;
         private Person person1;
-        private Person person2;
+        private string personenNamen = "";
         private double fahrzeug_gewicht;
-        private int zähler = 0;
-        private int personen_zähler = 0;
-        List <Person> personen_liste=new List<Person>();
+        List<Person> personen_liste = new List<Person>();
         public Auto()
         {
             anzahl_personen = 4;
@@ -22,34 +20,51 @@ namespace LucaTimonAutogewicht
             gesammt_gewicht = fahrzeug_gewicht;
         }
 
-        public void PersonEinsteigen(Person pPersonEingestiegen)
+
+        public void PersonEinsteigen(Person pPersonEingestiegen)        //wird nicht benötigt
         {
             person1 = pPersonEingestiegen;
-            personen_liste.Add(person1);
         }
 
-
+        public void Personenliste(Person pPersonFürListe)
+        {
+            personen_liste.Add(pPersonFürListe);
+        }
+        public void PersonenlisteLeeren()
+        {
+            personen_liste.Clear();
+        }
 
         public double GetGesammtGewicht()
         {
-            if (personen_zähler == 0)
+            gesammt_gewicht = fahrzeug_gewicht;
+
+            foreach (Person pPerson in personen_liste)
             {
-                if (zähler == 0)
+                if (pPerson.GetGewicht() != 0)
                 {
-                    gesammt_gewicht = fahrzeug_gewicht + person1.GetGewicht();
-                    zähler++;
+                    gesammt_gewicht += pPerson.GetGewicht();
                 }
                 else
                 {
-                    gesammt_gewicht += person1.GetGewicht();
+                    gesammt_gewicht = fahrzeug_gewicht;
                 }
             }
-
-
-           
-
-
             return gesammt_gewicht;
+        }
+
+        public string GetAllePersonennamen()
+        {
+            personenNamen = "";
+            foreach (Person pPerson in personen_liste)
+            {
+                personenNamen += pPerson.GetName() + "\r\n";
+            }
+            if (personen_liste.Count != 0)
+            {
+                personenNamen.Remove(personenNamen.Length - 1);
+            }
+            return personenNamen;
         }
 
         public int GetPersonen()

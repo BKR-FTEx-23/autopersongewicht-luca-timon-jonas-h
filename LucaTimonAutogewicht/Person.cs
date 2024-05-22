@@ -8,20 +8,31 @@ namespace LucaTimonAutogewicht
     public class Person
     {
         private double gewicht;
-
+        private string name;
         public Person()
         {
             gewicht = 100;
         }
-        public Person (double pGewicht) 
+
+        public Person(string pName, double pGewichtPerson)
         {
-            gewicht =pGewicht;
+            name = pName;
+            gewicht = pGewichtPerson;
+        }
+
+        public Person(double pGewicht)
+        {
+            gewicht = pGewicht;
         }
 
 
         public double GetGewicht()
         {
             return gewicht;
+        }
+        public string GetName()
+        {
+            return name;
         }
     }
 }
