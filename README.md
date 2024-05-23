@@ -33,7 +33,7 @@ classDiagram
 ```
 
 ### Form1.cs
-![https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJWWE3BDUZTR3Q2R27OZSO7I6A](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJXW2PQGHNRCHUWWKVKZSPBMMA))  
+![https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJWWE3BDUZTR3Q2R27OZSO7I6A](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJXW2PQGHNRCHUWWKVKZSPBMMA)  
 *Oberfläche des Programmes aus C#*  
 
 ### Person.cs
