@@ -2,7 +2,7 @@ namespace LucaTimonAutogewicht
 {
     public partial class Form1 : Form
     {
-        Auto Auto1 = new Auto();
+        Auto mein_Auto = new Auto();
 
         public Form1()
         {
@@ -11,25 +11,22 @@ namespace LucaTimonAutogewicht
 
         private void btneinsteigen_Click(object sender, EventArgs e)
         {
-            txtgewichtausgabe.Text = Auto1.GetGesammtGewicht().ToString();
-            txt_ausgabe_namen.Text = Auto1.GetAllePersonennamen().ToString();
+            txtgewichtausgabe.Text = mein_Auto.GetGesammtGewicht().ToString();
+            txt_ausgabe_namen.Text = mein_Auto.GetAllePersonennamen().ToString();
         }
 
         private void btnaussteigen_Click(object sender, EventArgs e)
         {
-            Auto1.PersonenlisteLeeren();
-            txtgewichtausgabe.Text = Auto1.GetGesammtGewicht().ToString();
+            mein_Auto.Aussteigen();
+            txtgewichtausgabe.Text = mein_Auto.GetGesammtGewicht().ToString();
             txt_ausgabe_namen.Clear();
         }
 
-        private void btn_gewicht_person_Click(object sender, EventArgs e)
+        private void Btn_name_person_Click(object sender, EventArgs e) //Speichern
         {
-            //Nicht verwenden
-        }
-
-        private void Btn_name_person_Click(object sender, EventArgs e)//Speichern
-        {
-            Auto1.Personenliste(new Person(Txt_name.Text.ToString(),Convert.ToDouble(Txt_Gewicht_person.Text)));
+            mein_Auto.Einsteigen(new Person(Txt_name.Text.ToString(),Convert.ToDouble(Txt_Gewicht_person.Text)));
+            Txt_name.Clear();
+            Txt_Gewicht_person.Clear();
         }
     }
 }

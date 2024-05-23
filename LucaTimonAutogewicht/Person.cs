@@ -11,6 +11,7 @@ namespace LucaTimonAutogewicht
         private string name;
         public Person()
         {
+            name = "John Doe";
             gewicht = 100;
         }
 
@@ -19,12 +20,6 @@ namespace LucaTimonAutogewicht
             name = pName;
             gewicht = pGewichtPerson;
         }
-
-        public Person(double pGewicht)
-        {
-            gewicht = pGewicht;
-        }
-
 
         public double GetGewicht()
         {
