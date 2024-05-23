@@ -4,8 +4,36 @@
 Dieses Programm simuliert das Ein- und Aussteigen von Personen in ein Auto und berechnet dabei das Gesamtgewicht des Autos. Das Programm ist in C# geschrieben und verwendet eine Windows Forms Oberfläche zur Interaktion mit dem Benutzer.
 
 ## Klassenbeschreibung
+
+### Klassendiagramm
+```mermaid
+classDiagram
+    class Auto{
+      -double gesamt_gewicht
+      -string personenNamen
+      -double fahrzeug_gewicht
+      -List<Person> personen_liste
+      
+      +Auto()
+      +void Einsteigen(Person pPersonFürListe)
+      +void Aussteigen()
+      +double GetGesamtGewicht()
+      +string GetAllePersonennamen()
+    }
+
+    class Person{
+      -double gewicht
+      -string name
+
+      +Person()
+      +Person(string pName, double pGewichtPerson)
+      +double GetGewicht()
+      +string GetName()
+    }
+```
+
 ### Form1.cs
-![](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJWWE3BDUZTR3Q2R27OZSO7I6A)  
+![https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJWWE3BDUZTR3Q2R27OZSO7I6A](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Oberfl%C3%A4che_Programm.png?token=GHSAT0AAAAAACRQLTJXW2PQGHNRCHUWWKVKZSPBMMA))  
 *Oberfläche des Programmes aus C#*  
 
 ### Person.cs
@@ -47,9 +75,6 @@ Diese Klasse repräsentiert ein Auto, das Personen aufnehmen kann und das Gesamt
 - Klicken Sie auf den Button "Speichern", um die Person hinzuzufügen.
 - Klicken Sie auf den Button "Einsteigen", um das aktuelle Gewicht und die Namen aller Personen im Auto anzuzeigen.
 - Klicken Sie auf den Button "Aussteigen", um alle Personen aus dem Auto zu entfernen und das Gewicht zurückzusetzen.
-
-## Klasssendiagramm
-![](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Klassendiagramm.png?token=GHSAT0AAAAAACRQLTJX5R4QIEQYYIMXJKMUZSPAPCQ)
 
 ## Anmerkungen
 Das Programm aktualisiert die Gewichtsanzeige und die Anzeige der Personennamen bei jeder relevanten Benutzeraktion.
