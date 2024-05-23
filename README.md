@@ -48,6 +48,9 @@ Diese Klasse repräsentiert ein Auto, das Personen aufnehmen kann und das Gesamt
 - Klicken Sie auf den Button "Einsteigen", um das aktuelle Gewicht und die Namen aller Personen im Auto anzuzeigen.
 - Klicken Sie auf den Button "Aussteigen", um alle Personen aus dem Auto zu entfernen und das Gewicht zurückzusetzen.
 
+## Klasssendiagramm
+![](https://raw.githubusercontent.com/BKR-FTEx-23/autopersongewicht-luca-timon-jonas-h/master/Klassendiagramm.png?token=GHSAT0AAAAAACRQLTJX5R4QIEQYYIMXJKMUZSPAPCQ)
+
 ## Anmerkungen
 Das Programm aktualisiert die Gewichtsanzeige und die Anzeige der Personennamen bei jeder relevanten Benutzeraktion.
 Wenn Personen aussteigen, wird die Personenliste geleert und das Gewicht des Autos auf das Grundgewicht zurückgesetzt.
