@@ -7,28 +7,57 @@ namespace LucaTimonAutogewicht
 {
     public class Auto
     {
-        private int gewicht;
-        private int personen;
+        private double gesamt_gewicht;
+        private string personenNamen = "";
+        private double fahrzeug_gewicht;
+        List<Person> personen_liste = new List<Person>();
 
-        public  Auto() 
+        public Auto()
         {
-            gewicht = 1000;
-            personen = 4;
+            fahrzeug_gewicht = 1000;
+            gesamt_gewicht = fahrzeug_gewicht;
         }
 
-        public int GetGewicht() 
-        { 
-            return gewicht;
+        public void Einsteigen(Person pPersonFürListe)
+        {
+            personen_liste.Add(pPersonFürListe);
+        }
+        public void Aussteigen()
+        {
+            personen_liste.Clear();
         }
 
-        public int GetPersonen()
+        public double GetGesammtGewicht()
         {
-            return personen;
+            gesamt_gewicht = fahrzeug_gewicht;
+
+            foreach (Person pPerson in personen_liste)
+            {
+                if (pPerson.GetGewicht() != 0)
+                {
+                    gesamt_gewicht += pPerson.GetGewicht();
+                }
+                else
+                {
+                    gesamt_gewicht = fahrzeug_gewicht;
+                }
+            }
+            return gesamt_gewicht;
         }
 
-        public override string ToString()
+        public string GetAllePersonennamen()
         {
-            return "";
+            personenNamen = "";
+
+            foreach (Person pPerson in personen_liste)
+            {
+                personenNamen += pPerson.GetName() + "\r\n";
+            }
+            if (personen_liste.Count != 0)
+            {
+                personenNamen.Remove(personenNamen.Length - 1);
+            }
+            return personenNamen;
         }
     }
 }
