@@ -1,0 +1,29 @@
++----------------------+
+|       Person         |
++----------------------+
+| - gewicht: double    |
+| - name: string       |
++----------------------+
+| + Person()           |
+| + Person(pName: string, pGewichtPerson: double) |
+| + GetGewicht(): double  |
+| + GetName(): string    |
++----------------------+
+
++----------------------+
+|        Auto          |
++----------------------+
+| - gesamt_gewicht: double   |
+| - personenNamen: string    |
+| - fahrzeug_gewicht: double  |
+| - personen_liste: List<Person> |
++----------------------+
+| + Auto()                  |
+| + Einsteigen(pPersonFürListe: Person) |
+| + Aussteigen()            |
+| + GetGesammtGewicht(): double |
+| + GetAllePersonennamen(): string |
++----------------------+
+
+Relationship:
+Auto *------* Person
