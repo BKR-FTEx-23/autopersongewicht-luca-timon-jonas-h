@@ -11,14 +11,15 @@ namespace LucaTimonAutogewicht
 
         private void btneinsteigen_Click(object sender, EventArgs e)
         {
-            txtgewichtausgabe.Text = mein_Auto.GetGesammtGewicht().ToString();
+            //txtgewichtausgabe.Text = mein_Auto.GetGesammtGewicht().ToString();
+            txtgewichtausgabe.Text = mein_Auto.GesammtGewicht.ToString();       //mit Property
             txt_ausgabe_namen.Text = mein_Auto.GetAllePersonennamen().ToString();
         }
 
         private void btnaussteigen_Click(object sender, EventArgs e)
         {
             mein_Auto.Aussteigen();
-            txtgewichtausgabe.Text = mein_Auto.GetGesammtGewicht().ToString();
+            txtgewichtausgabe.Text = mein_Auto.GesammtGewicht.ToString();
             txt_ausgabe_namen.Clear();
         }
 

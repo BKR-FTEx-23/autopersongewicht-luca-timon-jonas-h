@@ -9,17 +9,32 @@ namespace LucaTimonAutogewicht
     {
         private double gewicht;
         private string name;
-        public Person()
-        {
-            name = "John Doe";
-            gewicht = 100;
-        }
+        private double führerscheinID;
 
-        public Person(string pName, double pGewichtPerson)
+        public Person(string pName, double pGewichtPerson, double pFührerscheinID)
         {
             name = pName;
             gewicht = pGewichtPerson;
+            führerscheinID = pFührerscheinID;
         }
+        public Person(string pName, double pGewichtPerson):this (pName,pGewichtPerson,123)
+        {
+           
+        }
+
+
+        public Person() : this("John Doe", 100,551)
+        {
+            // name = "John Doe";
+            // gewicht = 100;
+        }
+
+        public double Gewicht
+        {
+            get { return gewicht; } 
+            set { gewicht = value; }
+        }
+
 
         public double GetGewicht()
         {

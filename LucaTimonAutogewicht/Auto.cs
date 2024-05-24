@@ -18,6 +18,26 @@ namespace LucaTimonAutogewicht
             gesamt_gewicht = fahrzeug_gewicht;
         }
 
+        public double GesammtGewicht        //property
+        {
+            get { 
+                gesamt_gewicht = fahrzeug_gewicht;
+
+                foreach (Person pPerson in personen_liste)
+                {
+                    if (pPerson.Gewicht != 0)
+                    {
+                        gesamt_gewicht += pPerson.Gewicht;
+                    }
+                    else
+                    {
+                        gesamt_gewicht = fahrzeug_gewicht;
+                    }
+                }
+                return gesamt_gewicht;
+            }
+        }
+
         public void Einsteigen(Person pPersonFürListe)
         {
             personen_liste.Add(pPersonFürListe);
@@ -26,16 +46,16 @@ namespace LucaTimonAutogewicht
         {
             personen_liste.Clear();
         }
-
+       
         public double GetGesammtGewicht()
         {
             gesamt_gewicht = fahrzeug_gewicht;
 
             foreach (Person pPerson in personen_liste)
             {
-                if (pPerson.GetGewicht() != 0)
+                if (pPerson.Gewicht != 0)
                 {
-                    gesamt_gewicht += pPerson.GetGewicht();
+                    gesamt_gewicht += pPerson.Gewicht;                   
                 }
                 else
                 {
